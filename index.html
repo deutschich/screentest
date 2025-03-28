@@ -1,1 +1,42 @@
-
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+        .overlay {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <script>
+        const colors = ['black', 'white', 'red', 'green', 'blue', 'yellow', 'magenta', 'cyan'];
+        let index = 0;
+        
+        function changeColor() {
+            document.querySelector('.overlay').style.backgroundColor = colors[index];
+            index = (index + 1) % colors.length;
+        }
+        
+        document.body.addEventListener('click', changeColor);
+    </script>
+</body>
+</html>
